@@ -12,10 +12,6 @@
     margin: 25vh auto;
 }
 
-.background.shake {
-    animation: backgroundshake 0.5s; /* Apply background shake animation */
-}
-
 .window {
     width: 43%;
     height: 43%;
@@ -70,8 +66,16 @@
     filter: blur(0);
 }
 
+.background.shake {
+    animation: backgroundshake 0.5s;
+}
+
 .window.shake {
-    animation: windowshake 0.5s; /* Apply window shake animation */
+    animation: windowshake 0.5s;
+}
+
+.triangle.shake {
+    animation: triangleShrink 1s forwards;
 }
 
 @keyframes backgroundshake {
@@ -103,8 +107,4 @@
         transform: translate(-50%, -38%) scale(1);
         filter: blur(0);
     }
-}
-
-.triangle.shake {
-    animation: triangleShrink 1s forwards; /* Triangle shrinking and blurring */
 }
