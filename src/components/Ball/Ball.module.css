@@ -1,0 +1,110 @@
+.background {
+    width: 530px;
+    height: 530px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 700px;
+    margin: 25vh auto;
+}
+
+.background.shake {
+    animation: backgroundshake 0.5s; /* Apply background shake animation */
+}
+
+.window {
+    width: 43%;
+    height: 43%;
+    background: #040404;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Keep centered */
+}
+
+.triangle {
+    width: 75%;
+    height: 75%;
+    background-image: url('../../img/Triangle.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -38%);
+}
+
+.answer {
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+    padding: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.clear {
+    filter: blur(0);
+}
+
+.window.shake {
+    animation: windowshake 0.5s; /* Apply window shake animation */
+}
+
+@keyframes backgroundshake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(10px); }
+    50% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes windowshake {
+    0% { transform: translate(-50%, -50%) translateX(0); }
+    25% { transform: translate(-50%, -50%) translateX(10px); }
+    50% { transform: translate(-50%, -50%) translateX(-10px); }
+    75% { transform: translate(-50%, -50%) translateX(10px); }
+    100% { transform: translate(-50%, -50%) translateX(0); }
+}
+
+@keyframes triangleShrink {
+    0% {
+        transform: translate(-50%, -38%) scale(1);
+        filter: blur(0);
+    }
+    25% {
+        transform: translate(-50%, -38%) scale(0.7);
+        filter: blur(5px);
+    }
+    100% {
+        transform: translate(-50%, -38%) scale(1);
+        filter: blur(0);
+    }
+}
+
+.triangle.shake {
+    animation: triangleShrink 1s forwards; /* Triangle shrinking and blurring */
+}
